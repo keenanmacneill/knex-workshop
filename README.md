@@ -1,1 +1,1 @@
-![alt text](image.png)
+![Workshop ERD](workshop_erd.png)
