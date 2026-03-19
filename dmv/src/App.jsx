@@ -1,23 +1,26 @@
-import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Vehicles from './components/Vehicles';
-import People from './components/People';
-import Locations from './components/Locations'
-import './App.css';
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Home from "./components/Home";
+import Header from "./components/Header";
+import Vehicles from "./components/Vehicles";
+import People from "./components/People";
+import Locations from "./components/Locations";
+import SearchPage from "./components/SearchPage";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/vehicles' element={<Vehicles />} />
-      <Route path='/People' element={<People />} />
-      <Route path='/Locations' element={<Locations />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/vehicles" element={<Vehicles />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/locations" element={<Locations />} />
+      </Routes>
+    </>
   );
-};
+}
 
-export default App
+export default App;
