@@ -7,7 +7,6 @@ const port = 8080;
 
 app.use(cors());
 app.use(express.json());
-
 app.get('/', (req, res) => {
   res.status(200).json('You have arrived!');
 });
@@ -15,6 +14,15 @@ app.get('/', (req, res) => {
 app.get('/vehicles', (req, res) => {
   knex('vehicles')
     .select('*')
+    .then(data => {
+      res.status(200).json(data);
+    });
+});
+
+app.get('/vehicles/:id', (req, res) => {
+  knex('vehicles')
+    .select('*')
+    .where('id', req.params.id)
     .then(data => {
       res.status(200).json(data);
     });
