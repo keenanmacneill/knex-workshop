@@ -11,5 +11,5 @@ app.listen(port, () => {
 });
 
 app.get('/', (req, res) => {
-  res.status(200).json('You have arrived.');
+  res.status(200).json('You have arrived!');
 });
