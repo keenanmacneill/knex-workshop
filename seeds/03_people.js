@@ -19,8 +19,8 @@ const fakePeople = async () => {
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex.schema.raw('TRUNCATE locations CASCADE');
-  await knex('people').del();
+  await knex.schema.raw('TRUNCATE people  CASCADE');
+  // await knex('people').del();
   await fakePeople();
   await knex('people').insert(array);
 };

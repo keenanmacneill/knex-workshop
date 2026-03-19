@@ -14,7 +14,7 @@ const fakeLocation = async () => {
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex.schema.raw('TRUNCATE locations CASCADE');
-  await knex('locations').del();
+  // await knex('locations').del();
   await fakeLocation();
   await knex('locations').insert(array);
 };

@@ -13,8 +13,8 @@ const fakeVehicle = async () => {
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex.schema.raw('TRUNCATE locations CASCADE');
-  await knex('vehicles').del();
+  await knex.schema.raw('TRUNCATE vehicles CASCADE');
+  // await knex('vehicles').del();
   await fakeVehicle();
   await knex('vehicles').insert(array);
 };
